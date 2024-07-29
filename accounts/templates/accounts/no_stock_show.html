@@ -1,0 +1,27 @@
+{% extends 'accounts/main.html' %}
+
+
+{% block content %}
+    <br>
+
+    <div class="row">
+        <div class="col-md">
+            <h1>Bidhaa zilizoisha</h1>
+            <br>
+            <div class="card card-body table-container">
+                <table class="table">
+                    <tr>
+                        <th>Product Name</th>
+                    </tr>
+                    {% for no_stock in no_stocks %}
+                    <tr>
+                        <td>{{no_stock.name}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <br>
+        </div>
+    </div>
+
+{% endblock %}

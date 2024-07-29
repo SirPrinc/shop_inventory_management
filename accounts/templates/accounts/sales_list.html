@@ -1,0 +1,38 @@
+{% extends 'accounts/main.html' %}
+{% load humanize %}
+
+{% block content %}
+    <br>
+
+    <div class="row">
+        <div class="col-md">
+            <h1>Mauzo ya leo</h1>
+            <br>
+            <div class="card card-body">
+                <table class="table">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity Sold</th>
+                        <th>Selling Price</th>
+                        <th>Profit</th>
+                        <th>Sale Date</th>
+                    </tr>
+
+                    {% for sale in sales %}
+                    <tr>
+                        <td>{{ sale.product.name }}</td>
+                        <td>{{ sale.quantity_sold|intcomma }}</td>
+                        <td>{{ sale.selling_price|intcomma }}</td>
+                        <td>{{ sale.profit|intcomma }}</td>
+                        <td>{{ sale.sale_date }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+            <br>
+            <a href="{% url 'export_sales_to_excel' %}" class="btn btn-sm btn-danger">Export to Excel</a>
+        </div>
+    </div>
+
+{% endblock %}

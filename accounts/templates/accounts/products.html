@@ -1,0 +1,55 @@
+{% extends 'accounts/main.html' %}
+{% load humanize %}
+
+
+{% block content %}
+    <br>
+
+    <div class="row">
+        <div class="col-md">
+            <a href="{% url 'create_sale' %}" class="btn" style="background-color: #007BFF; color: white; border: none;"><b>UZA BIDHAA</b></a>
+            <a href="{% url 'add_existing_product' %}" class="btn" style="background-color: #28A745; color: white; border: none;">ONGEZA BIDHAA</a>
+            <a href="{% url 'create_product' %}" class="btn" style="background-color: #FFC107; color: black; border: none;">ONGEZA BIDHAA MPYA</a>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="card card-body">
+                        <h3>Tafuta bidhaa</h3>
+                        <form method="GET">
+                            {{ myFilter.form }}
+                            <button class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card card-body">
+                <table class="table">
+                    <tr>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Cost Price(Tsh)</th>
+                        <th>Seling price(Tsh)</th>
+                        <!-- <th>Ondoa</th> -->
+                    </tr>
+
+                    {% for i in products %}
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>{{i.description}}</td>
+                        <td>{{i.quantity|intcomma}}</td>
+                        <td>{{i.cost_price|intcomma}}</td>
+                        <td>{{i.selling_price|intcomma}}</td>
+                        <!-- <td><a class="btn btn-sm btn-danger" href="{% url 'delete' i.pk %}">Futa</a></td> -->
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+            <br>
+        </div>
+    </div>
+
+{% endblock %}

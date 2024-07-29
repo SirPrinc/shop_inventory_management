@@ -1,0 +1,45 @@
+<br>
+<div class="row">
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+                <div class="card-header">
+                    <h5 class="card-title">Jumla ya bidhaa</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ products_count }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="orders-delivered">
+                <div class="card-header">
+                    <h5 class="card-title">Bidhaa zilizouzwa leo</h5>
+                </div>
+                <a href="{% url 'sales_list' %}" style="text-decoration: none;color: white;">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ sales_count }}</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="orders-pending">
+                <div class="card-header">
+                    <h5 class="card-title">Bidhaa zilizoisha</h5>
+                </div>
+                <a href="{% url 'no_stock_show' %}" style="text-decoration: none;color: white;">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ no_stock_count }}</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

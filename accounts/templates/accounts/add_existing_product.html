@@ -1,0 +1,25 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h1>Ongeza bidhaa iliyokuwepo dukani</h1>
+            <br>
+            <h2>Chagua chini hapo</h2>
+            <br>
+            <form action="{% url 'add_existing_product' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="mt-3">
+                    <a class="btn btn-warning" href="{% url 'products' %}">Rudi nyuma</a>
+                    <input class="btn btn-primary" type="submit" value="Ongeza bidhaa">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

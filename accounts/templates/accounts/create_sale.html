@@ -1,0 +1,25 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <p>Record Sale "{{item}}"?</p>
+
+            <form action="{% url 'create_sale' %}" method="POST">
+
+                {% csrf_token %}
+                {{ form.as_p }}
+                <a class="btn btn-warning" href="{% url 'products' %}">Cancel</a>
+
+                <input class="btn btn-danger" type="submit" name="Confirm">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
