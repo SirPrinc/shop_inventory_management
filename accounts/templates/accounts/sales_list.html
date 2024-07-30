@@ -11,11 +11,11 @@
             <div class="card card-body">
                 <table class="table">
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity Sold</th>
-                        <th>Selling Price</th>
-                        <th>Profit</th>
-                        <th>Sale Date</th>
+                        <th>Bidhaa</th>
+                        <th>Idadi iliyouzwa</th>
+                        <th>Bei ya kuuza</th>
+                        <th>Faida</th>
+                        <th>Tarehe ya kuuza</th>
                     </tr>
 
                     {% for sale in sales %}
@@ -31,7 +31,7 @@
                 </table>
             </div>
             <br>
-            <a href="{% url 'export_sales_to_excel' %}" class="btn btn-sm btn-danger">Export to Excel</a>
+            <a href="{% url 'export_sales_to_excel' %}" class="btn btn-sm btn-danger">Peleka iwe excel</a>
         </div>
     </div>
 

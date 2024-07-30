@@ -6,15 +6,15 @@
 <div class="row">
     <div class="col-md-6">
         <div class="card card-body">
-            <p>Add Product</p>
-
+            <h1>Ongeza bidhaa</h1>
+            <br>
             <form action="{% url 'create_product' %}" method="POST">
 
                 {% csrf_token %}
                 {{ form.as_p }}
-                <a class="btn btn-warning" href="{% url 'products' %}">Cancel</a>
+                <a class="btn btn-warning" href="{% url 'products' %}">Rudi nyuma</a>
 
-                <input class="btn btn-danger" type="submit" name="Confirm">
+                <input class="btn btn-danger" type="submit" name="submit" value="Ongeza bidhaa">
 
             </form>
         </div>
